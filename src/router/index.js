@@ -1,8 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginPage from '../components/LoginPage.vue';
 import TaskList from '../components/TaskList.vue';
+import Painel from '../views/Painel.vue';
 
 const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Painel,  // Página inicial
+  },
   {
     path: '/login',
     name: 'Login',
@@ -15,8 +21,8 @@ const routes = [
     meta: { requiresAuth: true },  // Exige autenticação
   },
   {
-    path: '/',
-    redirect: '/login',  // Redireciona para a página de login por padrão
+    path: '/:catchAll(.*)',  // Rota para páginas não encontradas
+    redirect: '/login',  // Redireciona para login se não encontrar a rota
   },
 ];
 

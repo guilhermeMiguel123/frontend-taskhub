@@ -2,7 +2,6 @@
   <div id="app">
     <header>
       <h1>TaskHub</h1>
-      <!-- A navegação só aparece se o usuário estiver logado -->
     </header>
 
     <!-- O conteúdo da página será renderizado aqui -->
@@ -12,6 +11,12 @@
       <p>&copy; 2024 TaskHub. Todos os direitos reservados.</p>
     </footer>
   </div>
+
+  <v-app>
+    <v-main>
+      <router-view /> <!-- Aqui o Vue Router vai renderizar a página (Painel.vue) -->
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -50,22 +55,6 @@ header {
   color: white;
   padding: 20px;
   text-align: center;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
 }
 
 footer {
